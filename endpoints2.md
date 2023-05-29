@@ -107,7 +107,10 @@ GROUP: Homepage
 - URL: /home
 - Method: POST
 - Request Body:
-  - id
+  - name
+  - mbti
+  - kepribadian
+  - deskripsi
 - Response:
   - success:
     - status code: 200 (OK)
@@ -127,13 +130,19 @@ GROUP: Homepage
       URL: /personality
       Method: POST
       Request Body:
-      - name (string) 
       - mbti (string)
+      - recommendation (string)
       Response:
-      - body:
+       - success: 
+         - status code: 200 (OK)
+         - body:
+           json
        {
         "message": "Here are the recommendations based on your test result"
-         "recommendations": "Pembelajaran yang melibatkan emosi: ESFP cenderung belajar..."
+         "data": {
+          "mbti": "ESFP",
+          "recommendations": "Pembelajaran yang melibatkan emosi: ESFP cenderung belajar..."
+         }
        }
       
   - error:
@@ -142,11 +151,20 @@ GROUP: Homepage
       json
       {
         "error": true,
-        "message": "Dashboard update failed"
+        "message": "Personality update failed"
       }
 
       [3] Account
       URL : /account
       Method: POST
       Request Body :
-      -
+      - name (string)
+      - email (string)
+      Response:
+        - success:
+        - status code: 200 (OK)
+        - body: 
+          json
+         { 
+            "message": ""
+         }
