@@ -126,7 +126,7 @@ GROUP: Homepage
         }
       }
       
-      [2] Personality
+[2] Personality
       URL: /personality
       Method: POST
       Request Body:
@@ -154,7 +154,7 @@ GROUP: Homepage
         "message": "Personality update failed"
       }
 
-      [3] Account
+ [3] Account
       URL : /account
       Method: POST
       Request Body :
