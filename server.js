@@ -85,7 +85,7 @@ const personalityHandler = (req, res) => {
   });
 };
 
-const AccountHandler = (req, res) => {
+const accountHandler = (req, res) => {
   const { name, email } = req.body
   // Simulate account logic
   res.json({
