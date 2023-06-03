@@ -50,6 +50,11 @@ GROUP: Authorization
         "data": {
           "userId": "user-yj5pc_LARC_AgK61",
           "name": "abcde",
+          "email": "abcde@gmail.com",
+          "mbti": "ESFP",
+          "personality": "Penghibur",
+          "deskripsi": "Orang-orang yang spontan, energik, dan antusias - hidup ...",
+          "recommendations": "Pembelajaran yang melibatkan emosi: ESFP cenderung belajar...",
           "token": "eyJhbGciOiJIUzI1NiIsInR5cC"
         }
       }
@@ -100,73 +105,3 @@ GROUP: MBTI
         "message": "Test result submission failed"
       }
       
-
-GROUP: Homepage
-
-[1] Home
-- URL: /home
-- Method: POST
-- Request Body:
-  - name
-  - mbti
-  - kepribadian
-  - deskripsi
-- Response:
-  - success:
-    - status code: 200 (OK)
-    - body:
-      json
-      {
-        "message": "",
-        "data": {
-          "Nama":
-          "mbti": "ESFP",
-          "kepribadian": "Penghibur",
-          "deskripsi": "Orang-orang yang spontan, energik, dan antusias - hidup ..."
-        }
-      }
-      
-      
-[2] Personality
-      URL: /personality
-      Method: POST
-      Request Body:
-      - mbti (string)
-      - recommendation (string)
-      Response:
-       - success: 
-         - status code: 200 (OK)
-         - body:
-           json
-       {
-        "message": "Here are the recommendations based on your test result"
-         "data": {
-          "mbti": "ESFP",
-          "recommendations": "Pembelajaran yang melibatkan emosi: ESFP cenderung belajar..."
-         }
-       }
-      
-  - error:
-    - status code: 400 (Bad Request)
-    - body:
-      json
-      {
-        "error": true,
-        "message": "Personality update failed"
-      }
-
-
-[3] Account
-      URL : /account
-      Method: POST
-      Request Body :
-      - name (string)
-      - email (string)
-      Response:
-        - success:
-        - status code: 200 (OK)
-        - body: 
-          json
-         { 
-            "message": ""
-         }
