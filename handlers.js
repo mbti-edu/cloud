@@ -18,18 +18,3 @@ exports.registerHandler = (req, res) => {
     // Handle result page logic
   };
   
-  // Handler for home endpoint
-  exports.homeHandler = (req, res) => {
-    // Handle home logic
-
-  };
-  // Handler for personality endpoint
-  exports.personalityHandler = (req, res) => {
-    // Handle personality logic
-  };
-  
-  // Handler for account endpoint
-  exports.accountHandler = (req, res) => {
-    // Handle account logic
-  };
-  
