@@ -54,7 +54,6 @@ GROUP: Authorization
           "mbti": "ESFP",
           "personality": "Penghibur",
           "deskripsi": "Orang-orang yang spontan, energik, dan antusias - hidup ...",
-          "recommendations": "Pembelajaran yang melibatkan emosi: ESFP cenderung belajar...",
           "token": "eyJhbGciOiJIUzI1NiIsInR5cC"
         }
       }
