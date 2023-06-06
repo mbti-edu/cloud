@@ -69,49 +69,14 @@ const resultPageHandler = (req, res) => {
   });
 };
 
-const homeHandler = (req, res) => {
-  const { name, mbti, kepribadian, deskripsi } = req.body
-  // Simulate home logic
-  res.json({
-    data: {
-      name, 
-      mbti,
-      kepribadian,
-      deskripsi,
-    },
-  });
-};
 
-const personalityHandler = (req, res) => {
-  const { mbti, recommendation } = req.body
-  // Simulate personality logic
-  res.json({
-    data: {
-      mbti,
-      recommendation,
-    },
-  });
-};
-
-const accountHandler = (req, res) => {
-  const { name, email } = req.body
-  // Simulate account logic
-  res.json({
-    data: {
-      name,
-      email,
-    },
-  });
-};
 
 // Routes
 app.post('/register', registerHandler);
 app.post('/login', loginHandler);
 app.get('/test', testPageHandler);
 app.post('/result', resultPageHandler);
-app.post('/home', homeHandler);
-app.post('/personality', personalityHandler);
-app.post('/account', accountHandler);
+
 
 // Start server
 app.listen(port, () => {
