@@ -74,7 +74,7 @@ GROUP: MBTI
 - URL: /test
 - Method: GET
 - Request Body: None
-- Response: This endpoint requires further details on what data is expected to be returned.
+- Response: {}
 
 [2] Result Page
 - URL: /result
