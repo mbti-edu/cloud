@@ -17,6 +17,7 @@ GROUP: Authorization
       {
         "message": "Account created",
         "data": {
+          "userId": "12345abcde"
           "name": "Firda",
           "email": "123@gmail.com",
           "password": "123"
