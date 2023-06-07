@@ -28,7 +28,6 @@ const loginHandler = (req, res) => {
   // Simulate login logic
   const userId = 'user-yj5pc_LARC_AgK61';
   const name = 'abcde';
-  const email = 'abcde@gmail.com';
   const mbti = 'ESFP';
   const personality = 'Penghibur';
   const deskripsi = 'Orang-orang yang spontan, energik, dan antusias - hidup ...';
