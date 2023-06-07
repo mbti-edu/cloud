@@ -13,11 +13,11 @@ Cloud Computing part on MBTI-Edu project.
 - **Description:** 
   - Register new user.
 - **Request Body:**
-  - name (string)
-  - email (string, must be unique)
-  - password (string, must be at least 8 characters)
-  - gender (string)
-  - birthdate (date)
+  - `name` as string
+  - `email` as string (must be unique)
+  - `password` as string (must be at least 8 characters)
+  - `gender` as string
+  - `birthdate` as date
  - **Response:**
   - success:
     - status code: 201 (Created)
@@ -44,13 +44,13 @@ Cloud Computing part on MBTI-Edu project.
      ```
  ### 2. Login
 - **URL:**
-- `auth/login`
+  - `auth/login`
 - **Method:**
-- `POST`
+  - `POST`
 - **Request Body:**
   - `email` as string
   - `password` as string
-- Response:
+- **Response:**
   - success:
     - status code: 200 (OK)
     - body:
@@ -79,21 +79,27 @@ Cloud Computing part on MBTI-Edu project.
       }
       ```
 
-GROUP: MBTI
+## MBTI
 
-[1] Test Page
-- URL: /test
-- Method: GET
-- Request Body: None
-- Response: {}
+### 1. Test Page
+- **URL:**
+  - `mbti/test`
+- **Method:**
+  - `GET`
+- **Request Body:**
+  - None
+- **Response:**
+  - {}
 
-[2] Result Page
-- URL: /result
-- Method: POST
-- Request Body:
-  - mbti (string)
-  - result (string)
-- Response:
+## 2. Result Page
+- **URL:**
+  - `mbti/result`
+- **Method:**
+  - `POST`
+- **Request Body:**
+  - `mbti` as string
+  - `result` as string
+- **Response:**
   - success:
     - status code: 200 (OK)
     - body:
