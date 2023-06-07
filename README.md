@@ -22,7 +22,7 @@ Cloud Computing part on MBTI-Edu project.
   - success:
     - status code: 201 (Created)
     - body:
-      json
+     ```JSON
       {
         "message": "Account created",
         "data": {
@@ -32,12 +32,13 @@ Cloud Computing part on MBTI-Edu project.
           "password": "123"
         }
       }
-      
+      ```
   - error:
     - status code: 400 (Bad Request)
     - body:
-      json
+     ```JSON
       {
         "error": true,
         "message": "User creation failed"
       }
+     ```
