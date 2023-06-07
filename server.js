@@ -10,12 +10,15 @@ app.use(bodyParser.json());
 
 // Handlers
 const registerHandler = (req, res) => {
-  const { name, email, password } = req.body;
+  const { name, email, password, gender, birthdate } = req.body;
   // Simulate registration logic
   const user = {
     name,
     email,
     password,
+    gender,
+    birthdate,
+
   };
   res.json({
     message: 'Account created',
