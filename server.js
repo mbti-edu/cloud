@@ -10,9 +10,10 @@ app.use(bodyParser.json());
 
 // Handlers
 const registerHandler = (req, res) => {
-  const { name, email, password, gender, birthdate } = req.body;
+  const { userId, name, email, password, gender, birthdate } = req.body;
   // Simulate registration logic
   const user = {
+    userId,
     name,
     email,
     password,
