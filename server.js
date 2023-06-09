@@ -46,7 +46,13 @@ const loginHandler = (req, res) => {
   const { email, password } = req.body;
 
   // Eksekusi query untuk mencari pengguna berdasarkan email dan password
-  const query = `SELECT * FROM user WHERE email = ? AND password = ?`;
+  const query = `
+    SELECT user.Id, user.name, user.email, result.userId, result.mbti
+    FROM user user
+    LEFT JOIN result result ON user.Id = result.userId
+    WHERE user.email = ? AND user.password = ?
+  `;
+
   connection.query(query, [email, password], (error, results) => {
     if (error) {
       console.error("Failed to login:", error);
@@ -60,22 +66,22 @@ const loginHandler = (req, res) => {
         message: "Invalid credentials",
       });
     } else {
-      const { userId, name, mbti, personality, deskripsi } = results[0];
+      const { userId, name, email, mbti } = results[0];
       res.json({
         error: false,
         message: "success",
         loginResult: {
-          userId: results.insertId,
+          userId,
           name,
           email,
           mbti,
-          personality,
-          deskripsi,
         },
       });
     }
   });
 };
+
+
 
 const testPageHandler = (req, res) => {
   const { name, question } = req.query;
