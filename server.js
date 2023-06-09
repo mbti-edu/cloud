@@ -87,28 +87,26 @@ const testPageHandler = (req, res) => {
 };
 
 const resultPageHandler = (req, res) => {
-  const { mbti, result } = req.body;
+  const { userId, mbtiType } = req.body;
 
-  // Eksekusi query untuk menyimpan hasil tes MBTI ke tabel "result"
-  const query = `INSERT INTO result (userId, mbti) VALUES (?, ?)`;
-  connection.query(query, [req.user.userId, mbti], (error, results) => {
+  // Eksekusi query untuk mendapatkan hasil berdasarkan userId dan mbtiType
+  const query = `SELECT * FROM result WHERE userId = ? AND mbti = ?`;
+  connection.query(query, [userId, mbtiType], (error, results) => {
     if (error) {
-      console.error("Failed to save test result:", error);
+      console.error("Failed to get test result:", error);
       res.status(500).json({
         error: true,
-        message: "Failed to save test result",
+        message: "Failed to get test result",
       });
     } else {
       res.json({
-        message: "Test has finished. Here is your result.",
-        data: {
-          mbti,
-          result,
-        },
+        message: "Test result obtained successfully",
+        data: results,
       });
     }
   });
 };
+
 
 // Routes
 app.post("/register", registerHandler);
