@@ -81,8 +81,6 @@ const loginHandler = (req, res) => {
   });
 };
 
-
-
 const testPageHandler = (req, res) => {
   const { name, question } = req.query;
   // Simulate test page logic
