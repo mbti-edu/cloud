@@ -27,7 +27,7 @@ Cloud Computing part on MBTI-Edu project.
         "message": "Account created",
         "data": {
           "userId": "12345abcde"
-          "name": "Firda",
+          "name": "12345",
           "email": "123@gmail.com",
           "password": "123"
         }
