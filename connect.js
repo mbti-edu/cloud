@@ -14,4 +14,4 @@ con.connect((err)=>{
     console.log('MySQL is connected')
 })
 
-module.exports = connect;
+module.exports = con;
