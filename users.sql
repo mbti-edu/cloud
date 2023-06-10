@@ -1,6 +1,6 @@
 -- SQLBook: Code
 -- database name: mbti_edu
-create database capstone;
+create database capstone; //for test
 
 --GROUP: Authorization
 --Tabel "user" digunakan untuk menyimpan data pengguna yang melakukan registrasi.
