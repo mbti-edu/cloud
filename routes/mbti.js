@@ -6,7 +6,11 @@ const { testPageHandler, resultPageHandler } = require('../handlers');
 // Test page endpoint
 router.get('/test', testPageHandler);
 
+// Save page endpoint
+router.post('/result', saveResultHandler);
+
 // Result page endpoint
-router.post('/result', resultPageHandler);
+router.get('/result', resultPageHandler);
+
 
 module.exports = router;
