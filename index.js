@@ -3,7 +3,7 @@ const bodyParser = require("body-parser");
 const connection = require("./connect");
 
 const app = express();
-const port = 8080;
+const port = 3000;
 
 // Middleware
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -90,6 +90,27 @@ const testPageHandler = (req, res) => {
   });
 };
 
+const saveResultHandler = (req, res) => {
+  const { userId, mbtiType } = req.body;
+
+  // Eksekusi query untuk menyimpan hasil tes ke tabel "result"
+  const query = `INSERT INTO result (userId, mbti) VALUES (?, ?)`;
+  connection.query(query, [userId, mbtiType], (error, results) => {
+    if (error) {
+      console.error("Failed to save test result:", error);
+      res.status(500).json({
+        error: true,
+        message: "Failed to save test result",
+      });
+    } else {
+      res.status(201).json({
+        message: "Test result saved successfully",
+        data: results,
+      });
+    }
+  });
+};
+
 const resultPageHandler = (req, res) => {
   const { userId, mbtiType } = req.body;
 
@@ -105,18 +126,24 @@ const resultPageHandler = (req, res) => {
     } else {
       res.json({
         message: "Test result obtained successfully",
-        data: results,
+        data: {
+          userId: userId,
+          mbtiType: mbtiType,
+        },
       });
     }
   });
 };
 
 
+
+
 // Routes
 app.post("/register", registerHandler);
 app.post("/login", loginHandler);
 app.get("/test", testPageHandler);
-app.post("/result", resultPageHandler);
+app.post("/result", saveResultHandler);
+app.get("/result", resultPageHandler);
 
 // Start server
 app.listen(port, () => {
