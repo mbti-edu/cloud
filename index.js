@@ -66,12 +66,12 @@ const loginHandler = (req, res) => {
         message: "Invalid credentials",
       });
     } else {
-      const { userId, name, email, mbti } = results[0];
+      const { Id, name, email, mbti } = results[0];
       res.json({
         error: false,
         message: "success",
         loginResult: {
-          userId,
+          Id,
           name,
           email,
           mbti,
